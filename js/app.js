@@ -1,8 +1,8 @@
 const calculateBtn = document.getElementById('calculate-btn').addEventListener('click',function(){
     const incomeInput = document.getElementById('income-input');
     const income = incomeInput.value;
-
-    const foodExpense = parseInt(expenseList('food-expense'));
+    if(income > 0){
+        const foodExpense = parseInt(expenseList('food-expense'));
     const rentExpense = parseInt(expenseList('rent-expense'));
     const clothesExpense = parseInt(expenseList('clothes-expense'));
     
@@ -13,6 +13,8 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     const myBalance = document.getElementById('remaining-balance');
     myBalanceAmount = income - myExpense;
     myBalance.innerText = myBalanceAmount;
+    }
+    
 })
 
 
