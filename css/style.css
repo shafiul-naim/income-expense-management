@@ -1,13 +1,11 @@
-.container {
-
-    background-color: rgba(245, 239, 226, 0.377);
-}
-
 .banner {
     height: 100%;
 }
 
-
+.calculate-area {
+    background-color: rgba(245, 239, 226, 0.377);
+    /* margin-left: 10px; */
+}
 
 .common-btn {
     color: white;
