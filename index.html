@@ -12,52 +12,56 @@
   
     <!-- header area -->
 
-    <header class="container my-5 p-5 text-center">
+    <header class="container my-2 p-2 text-center">
         <h2 class="">Income-Expense management</h2>
     </header>
     <main>
-        <section class="container my-3">
-            <div class="row">
-                <div class="col-md-8 ">
-                    <img class="img-fluid" src="img/banner.jpg" alt="">
+        <section class="container my-2">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-7 ">
+                    <img class="banner img-fluid" src="img/banner.jpg" alt="">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5 calculate-area">
                     <div>
-                        <h5 class="text-center mb-3">Income</h5><hr>
+                        <h5 class="text-center mb-3">Income</h5>
                         <div class="input-group input-group-sm mb-3">
                             <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Income</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                     </div>
                     <div>
-                        <h5 class="my-3 text-center">Expenses</h5><hr>
-                        <div class="input-group input-group-sm mb-3">
+                        <h5 class="my-3 text-center">Expenses</h5>
+                        <div class="input-group input-group-sm mb-2">
                             <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Food</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
-                          <div class="input-group input-group-sm mb-3">
+                          <div class="input-group input-group-sm mb-2">
                             <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Rent</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
-                          <div class="input-group input-group-sm mb-3">
+                          <div class="input-group input-group-sm mb-2">
                             <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Clothes</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                           <div class="text-center my-2">
-                            <button class="bg-info">Calculate</button>
+                            <button class="common-btn bg-info">Calculate</button>
                           </div>
                     </div>
                     <div class="mt-3 text-center">
-                        <h3>Total Expenses: <span>5500</span></h3>
-                        <h4>balance: <span>5500</span></h4>
+                        <h4>Total Expenses: <span>5500</span></h4>
+                        <h5>balance: <span>5500</span></h5>
                     </div>
                     <div>
-                        <div class="w-25 d-flex input-group input-group-sm mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Clothes</span>
+                        <div class="w-75 input-group input-group-sm mb-2">
+                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">save</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                            <span>%</span>
-                            <button>Save</button>
-                          </div>
+                            <span class="mx-3 my-1">%</span>
+                            <button class="ms-3 common-btn my-1 bg-info">Save</button>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <h5>Total Expenses: <span>5500</span></h5>
+                        <h4>balance: <span>5500</span></h4>
                     </div>
                </div>
         </section>

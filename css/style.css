@@ -1,10 +1,15 @@
-/* .right-side {
-    background-color: #353535;
-    color: white;
-    height: 300px;
-    p
+.container {
+
+    background-color: rgba(245, 239, 226, 0.377);
 }
 
-.input-color {
-    background-color: rgb(210, 241, 236);
-} */
+.banner {
+    height: 100%;
+}
+
+
+
+.common-btn {
+    color: white;
+    padding: 0px 10px;
+}
