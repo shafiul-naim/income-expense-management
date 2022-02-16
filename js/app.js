@@ -9,16 +9,28 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     
     const myExpense = expense(foodExpense, rentExpense, clothesExpense);
     document.getElementById('total-expense').innerText = myExpense;
+    
+    const myBalance = document.getElementById('remaining-balance');
+    myBalanceAmount = income - myExpense;
+    myBalance.innerText = myBalanceAmount;
 })
 
 
 function expenseList(expenseName){
     const expenseDetails = document.getElementById(expenseName).value;
-    document.getElementById(expenseName).value = "";
+    // document.getElementById(expenseName).value = "";
     return expenseDetails;
 }
 
 function expense(food, rent, clothes){
-    const totalExpense = food+ rent+ clothes;
-    return totalExpense;
+    
+    if(food>0 && rent>0 && clothes>0){
+        const totalExpense = food+ rent+ clothes;
+        return totalExpense;
+    }
+    else{
+        alert('enter a valid input');
+    }
+   
+   
 }
