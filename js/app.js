@@ -5,11 +5,7 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     const foodExpense = parseInt(expenseList('food-expense'));
     const rentExpense = parseInt(expenseList('rent-expense'));
     const clothesExpense = parseInt(expenseList('clothes-expense'));
-    // const rentExpense = parseInt(document.getElementById('').value);
-    // const clothesExpense =parseInt(document.getElementById('clothes-expense').value);
-   
-    /* const totalExpense =parseInt(document.getElementById('total-expense').value);
-    const clothesExpense =parseInt(document.getElementById('remaining-balance').value); */
+    
     
     const myExpense = expense(foodExpense, rentExpense, clothesExpense);
     document.getElementById('total-expense').innerText = myExpense;
