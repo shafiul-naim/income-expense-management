@@ -4,6 +4,7 @@ body {
     /* E27D5F  7EC3AE 5CDB94*/
 }
 
+/* header style */
 .header-title {
     border: 4px solid #25274D;
     color: #E85A50;
@@ -11,6 +12,7 @@ body {
     display: inline-block;
 }
 
+/* image style */
 .banner {
     height: 100%;
 }
@@ -20,6 +22,7 @@ body {
     object-fit: cover;
 }
 
+/* income-expense style */
 .calculate-area {
     background-color: #e5f4f6;
 }
@@ -31,6 +34,7 @@ body {
     border: none;
 }
 
+/* error field style */
 .notify {
     display: none;
     border: 1px solid red;
