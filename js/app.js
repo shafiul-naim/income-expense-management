@@ -11,19 +11,19 @@ function expense(food, rent, clothes){
    
 }
 // get balance
-// function balance(myIncome, myExpense){
+/* function balance(myIncome, myExpense){
+    const balanceError = document.getElementById('balance-fail');
+    const myBalanceAmount = myIncome - myExpense;
     
-//     const myBalanceAmount = myIncome - myExpense;
-   
-//     if(myBalanceAmount > myExpense){
-//         return myBalanceAmount;
-//     }
-//     else{
-//         const balanceError = document.getElementById('balance-fail');
-//        balanceError.style.display = 'block';
-//     //    return myBalanceAmount;
-//     }
-// }
+    if(myBalanceAmount > myExpense){
+        balanceError.style.display = 'none';
+        return myBalanceAmount;
+    }
+    else{
+       balanceError.style.display = 'block';
+       return myBalanceAmount;
+    }
+} */
 
 // error message
 function errorMessage(messageId, errorCondition){
@@ -64,11 +64,11 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
         const myExpense = expense(foodExpense, rentExpense, clothesExpense);
         document.getElementById('total-expense').innerText = myExpense;
     
-        // const myBalance = balance(income, myExpense);  
-        // document.getElementById('remaining-balance').innerText = myBalance;
+        /* const myBalance = balance(income, myExpense);  
+        document.getElementById('remaining-balance').innerText = myBalance; */
+       
         const myBalance =income - myExpense;  
         document.getElementById('remaining-balance').innerText = myBalance;
-       
         errorMessage2(income, myExpense);
         
         errorMessage('input-fail',false);
@@ -80,14 +80,14 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     
 });
 
-/* document.getElementById('save-button').addEventListener('click', function(){
+document.getElementById('save-button').addEventListener('click', function(){
     const income =  parseInt(getInputValue('income-input'));
     const foodExpense = parseInt(getInputValue('food-expense'));
     const rentExpense = parseInt(getInputValue('rent-expense'));
     const clothesExpense = parseInt(getInputValue('clothes-expense'));
     const saveInput = parseInt(getInputValue('save-percentage'));
 
-    if(income > 0 && foodExpense > 0 && rentExpense > 0 && clothesExpense > 0){
+    if(income > 0 && foodExpense > 0 && rentExpense > 0 && clothesExpense > 0 && saveInput> 0){
         const savingAmount = savePercentage(income,saveInput);
         document.getElementById('saving-amount').innerText = savingAmount;
     
@@ -113,4 +113,3 @@ function savePercentage(incomeAmount, saveInputAmount){
     const save = (incomeAmount * saveInputAmount) / 100;
     return save;
 }
- */

@@ -1,5 +1,6 @@
 body {
-    background-color: #7EC3AE
+    background-color: #7DC2AD;
+    /* E27D5F  7EC3AE 5CDB94*/
 }
 
 .header-title {
@@ -12,14 +13,16 @@ body {
 .banner {
     height: 100%;
     object-fit: cover;
+    opacity: 0.8;
 }
 
 .calculate-area {
-    background-color: rgba(245, 239, 226, 0.377);
+    background-color: #8DE4AF;
     margin-left: 20px;
 }
 
 .common-btn {
+    background-color: #05396B;
     color: white;
     padding: 3px 10px;
     border: none;
