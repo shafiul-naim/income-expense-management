@@ -50,27 +50,29 @@
                     <div class="mt-3 text-center">
                         <h4>Total Expenses: <span id="total-expense">0</span></h4>
                         <h5>balance: <span id="remaining-balance">0</span></h5>
+                        <!-- <h5 id="debt-fail" class="notify">Debt: <span id="debt">0</span></h5> -->
                     </div>
                     <div>
                         <div class="w-75 input-group input-group-sm mb-2">
                             <span class="fw-bold w-25 input-group-text" id="inputGroup-sizing-sm">save</span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <input id="save-percentage" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             <span class="mx-3 my-1">%</span>
-                            <button class="ms-3 common-btn my-1 bg-info">Save</button>
+                            <button id="save-button" class="ms-3 common-btn my-1 bg-info">Save</button>
                         </div>
                     </div>
                     <div class="mt-3 text-center">
-                        <h5>Total Expenses: <span>5500</span></h5>
-                        <h4>balance: <span>5500</span></h4>
+                        <h5>Saving Amount: <span>0</span></h5>
+                        <h4>Reamining balance: <span>0</span></h4>
                     </div>
                     <div class="notify-section">
-                        <p id="pin-fail" class="notify">❌ Pin Didn't Match, Please try again</p>
-                        <p id="pin-success" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+                        <p id="input-fail" class="notify">❌You've entered wrong input! Enter valid input</p>
+                        <p id="balance-fail" class="notify">❌Congratulations!! You are in debt now.</p>
+                        
                     </div>
-                    <div class="demo">
+                    <!-- <div class="demo">
                         <h5 class="title">food</h5>
                         <input class="input-field" type="text">
-                    </div>
+                    </div> -->
                </div>
         </section>
     </main>
