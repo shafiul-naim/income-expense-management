@@ -16,6 +16,18 @@ function balance(myIncome, myExpense){
     return myBalanceAmount;
 }
 
+// saving 
+
+function newRemainingBalance(myBalance, savingAmount){
+    const remainingBalance = myBalance - savingAmount;
+    return remainingBalance;
+}
+
+function savePercentage(incomeAmount, saveInputAmount){
+    const save = (incomeAmount * saveInputAmount) / 100;
+    return save;
+}
+
 // error message
 function errorMessage(messageId, errorCondition){
     const inputError = document.getElementById(messageId);
@@ -59,6 +71,7 @@ function errorMessage4(messageId, errorCondition){
         inputError.style.display = 'none';
     }
 }
+
 
 
 
@@ -107,7 +120,7 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
 });
 
 document.getElementById('save-button').addEventListener('click', function(){
-    console.log('hello')
+    
     const income =  getInputValue('income-input');
     const foodExpense = getInputValue('food-expense');
     const rentExpense =  getInputValue('rent-expense');
@@ -119,7 +132,6 @@ document.getElementById('save-button').addEventListener('click', function(){
     const rentExpenseValue = parseInt(getInputValue('rent-expense'));
     const clothesExpenseValue = parseInt(getInputValue('clothes-expense'));
     const saveInputValue = parseInt(getInputValue('save-percentage'));
-    console.log('world')
     
     if(isNaN(income) == false && isNaN(foodExpense) == false && isNaN(rentExpense) == false && isNaN(clothesExpense) == false && isNaN(saveInput) == 0){
         console.log('number1');
@@ -143,18 +155,7 @@ document.getElementById('save-button').addEventListener('click', function(){
         }
     }
     else{
-        errorMessage4('string-fail',true);
+       alert("please enter a number");
     }
     
 });
-
-
-function newRemainingBalance(myBalance, savingAmount){
-    const remainingBalance = myBalance - savingAmount;
-    return remainingBalance;
-}
-
-function savePercentage(incomeAmount, saveInputAmount){
-    const save = (incomeAmount * saveInputAmount) / 100;
-    return save;
-}
