@@ -19,7 +19,7 @@ function balance(myIncome, myExpense){
 // saving 
 
 function newRemainingBalance(myBalance, savingAmount){
-    const remainingBalance = myBalance - savingAmount;
+    const remainingBalance = (myBalance - savingAmount).toFixed(2);
     return remainingBalance;
 }
 
