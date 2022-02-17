@@ -19,12 +19,12 @@ function balance(myIncome, myExpense){
 // saving 
 
 function newRemainingBalance(myBalance, savingAmount){
-    const remainingBalance = (myBalance - savingAmount).toFixed(2);
+    const remainingBalance = parseInt(myBalance - savingAmount);
     return remainingBalance;
 }
 
 function savePercentage(incomeAmount, saveInputAmount){
-    const save = (incomeAmount * saveInputAmount) / 100;
+    const save = parseInt((incomeAmount * saveInputAmount) / 100);
     return save;
 }
 
