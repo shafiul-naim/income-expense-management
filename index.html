@@ -12,35 +12,35 @@
   
     <!-- header area -->
 
-    <header class="container my-2 p-2 text-center">
-        <h2 class="">Income-Expense management</h2>
+    <header class="header-area container-fluid  p-3 text-center">
+        <h2 class="header-title">Income-Expense management</h2>
     </header>
     <main>
         <section class="container my-2">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <img class="banner img-fluid" src="img/banner.jpg" alt="">
                 </div>
                 <div class="col-md-5 p-5 calculate-area">
                     <div>
                         <h5 class="text-center mb-3">Income</h5>
                         <div class="input-group input-group-sm mb-3">
-                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Income</span>
+                            <span class="fw-bold w-25 input-group-text" id="inputGroup-sizing-sm">Income</span>
                             <input id="income-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                     </div>
                     <div>
                         <h5 class="my-3 text-center">Expenses</h5>
                         <div class="input-group input-group-sm mb-2">
-                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Food</span>
+                            <span class="w-25 fw-bold  input-group-text" id="inputGroup-sizing-sm">Food</span>
                             <input id="food-expense" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                           <div class="input-group input-group-sm mb-2">
-                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Rent</span>
+                            <span class="fw-bold w-25 input-group-text" id="inputGroup-sizing-sm">Rent</span>
                             <input id="rent-expense" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                           <div class="input-group input-group-sm mb-2">
-                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">Clothes</span>
+                            <span class="fw-bold w-25 input-group-text" id="inputGroup-sizing-sm">Clothes</span>
                             <input id="clothes-expense" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                           </div>
                           <div class="text-center my-2">
@@ -53,7 +53,7 @@
                     </div>
                     <div>
                         <div class="w-75 input-group input-group-sm mb-2">
-                            <span class="w-25 input-group-text" id="inputGroup-sizing-sm">save</span>
+                            <span class="fw-bold w-25 input-group-text" id="inputGroup-sizing-sm">save</span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             <span class="mx-3 my-1">%</span>
                             <button class="ms-3 common-btn my-1 bg-info">Save</button>
@@ -66,6 +66,10 @@
                     <div class="notify-section">
                         <p id="pin-fail" class="notify">❌ Pin Didn't Match, Please try again</p>
                         <p id="pin-success" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+                    </div>
+                    <div class="demo">
+                        <h5 class="title">food</h5>
+                        <input class="input-field" type="text">
                     </div>
                </div>
         </section>
