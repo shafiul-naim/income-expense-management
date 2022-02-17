@@ -33,4 +33,7 @@ body {
 
 .notify {
     display: none;
+    border: 1px solid red;
+    padding: 2px;
+    margin: 2px;
 }
