@@ -11,19 +11,20 @@ function expense(food, rent, clothes){
    
 }
 // get balance
-/* function balance(myIncome, myExpense){
-    const balanceError = document.getElementById('balance-fail');
+function balance(myIncome, myExpense){
+    // const balanceError = document.getElementById('balance-fail');
     const myBalanceAmount = myIncome - myExpense;
+    return myBalanceAmount;
     
-    if(myBalanceAmount > myExpense){
-        balanceError.style.display = 'none';
+    /* if(myExpense > myIncome){
+        balanceError.style.display = 'block';
         return myBalanceAmount;
     }
     else{
-       balanceError.style.display = 'block';
+       balanceError.style.display = 'none';
        return myBalanceAmount;
-    }
-} */
+    } */
+}
 
 // error message
 function errorMessage(messageId, errorCondition){
@@ -36,8 +37,8 @@ function errorMessage(messageId, errorCondition){
         inputError.style.display = 'none';
     }
 }
-function errorMessage2(income,myExpense){
-    const balanceError = document.getElementById('balance-fail');
+function errorMessage2(messageId,myExpense, income){
+    const balanceError = document.getElementById(messageId);
     
     if(income<myExpense){
         
@@ -45,6 +46,16 @@ function errorMessage2(income,myExpense){
     }
     else{
         balanceError.style.display = 'none';
+    }
+}
+
+function errorMessage3(messageId, savingAmount, newBalance){
+    const savingError = document.getElementById(messageId);
+    if(savingAmount > newBalance){
+        savingError.style.display = 'block';
+    }
+    else{
+        savingError.style.display = 'none';
     }
 }
 
@@ -64,14 +75,15 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
         const myExpense = expense(foodExpense, rentExpense, clothesExpense);
         document.getElementById('total-expense').innerText = myExpense;
     
-        /* const myBalance = balance(income, myExpense);  
-        document.getElementById('remaining-balance').innerText = myBalance; */
-       
-        const myBalance =income - myExpense;  
+        const myBalance = balance(income, myExpense);  
         document.getElementById('remaining-balance').innerText = myBalance;
-        errorMessage2(income, myExpense);
+       
+        // const myBalance =income - myExpense;  
+        // document.getElementById('remaining-balance').innerText = myBalance;
+        // errorMessage2(income, myExpense);
         
         errorMessage('input-fail',false);
+        errorMessage2('balance-fail', myExpense, income);
     }
     
     else{
@@ -87,16 +99,18 @@ document.getElementById('save-button').addEventListener('click', function(){
     const clothesExpense = parseInt(getInputValue('clothes-expense'));
     const saveInput = parseInt(getInputValue('save-percentage'));
 
-    if(income > 0 && foodExpense > 0 && rentExpense > 0 && clothesExpense > 0 && saveInput> 0){
+    if(income > 0 && foodExpense > 0 && rentExpense > 0 && clothesExpense > 0 && saveInput>0){
         const savingAmount = savePercentage(income,saveInput);
         document.getElementById('saving-amount').innerText = savingAmount;
     
         const myExpense = expense(foodExpense, rentExpense, clothesExpense);
-    
-        const remainingBalance = newRemainingBalance(income, savingAmount, myExpense);
+        const myBalance = balance(income, myExpense);
+        const remainingBalance = newRemainingBalance(myBalance, savingAmount);
+       
         document.getElementById('new-remaining-balance').innerText = remainingBalance;
 
         errorMessage('input-fail',false);
+        errorMessage3('saving-fail', savingAmount, remainingBalance);
     }
     else{
         errorMessage('input-fail',true);
@@ -104,8 +118,8 @@ document.getElementById('save-button').addEventListener('click', function(){
      
 })
 
-function newRemainingBalance(incomeAmount, savingAmount, expenseAmount){
-    const remainingBalance = incomeAmount - (expenseAmount + savingAmount);
+function newRemainingBalance(myBalance, savingAmount){
+    const remainingBalance = myBalance - savingAmount;
     return remainingBalance;
 }
 
