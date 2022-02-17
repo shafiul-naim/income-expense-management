@@ -31,9 +31,11 @@ function savePercentage(incomeAmount, saveInputAmount){
 // error message
 function errorMessage(messageId, errorCondition){
     const inputError = document.getElementById(messageId);
-    
+
     if(errorCondition == true){
         inputError.style.display = 'block';
+        document.getElementById('balance-fail').style.display = 'none';
+        document.getElementById('string-fail').style.display = 'none';
     }
     else{
         inputError.style.display = 'none';
@@ -43,8 +45,9 @@ function errorMessage2(messageId,myExpense, income){
     const balanceError = document.getElementById(messageId);
     
     if(income<myExpense){
-        
         balanceError.style.display = 'block';
+        document.getElementById('input-fail').style.display = 'none';
+        document.getElementById('string-fail').style.display = 'none';
     }
     else{
         balanceError.style.display = 'none';
@@ -55,6 +58,8 @@ function errorMessage3(messageId, savingAmount, newBalance){
     const savingError = document.getElementById(messageId);
     if(savingAmount > newBalance){
         savingError.style.display = 'block';
+        document.getElementById('input-fail').style.display = 'none';
+        document.getElementById('string-fail').style.display = 'none';
     }
     else{
         savingError.style.display = 'none';
@@ -62,13 +67,15 @@ function errorMessage3(messageId, savingAmount, newBalance){
 }
 
 function errorMessage4(messageId, errorCondition){
-    const inputError = document.getElementById(messageId);
+    const stringError = document.getElementById(messageId);
     
     if(errorCondition == true){
-        inputError.style.display = 'block';
+        stringError.style.display = 'block';
+        document.getElementById('balance-fail').style.display = 'none';
+        document.getElementById('input-fail').style.display = 'none';
     }
     else{
-        inputError.style.display = 'none';
+        stringError.style.display = 'none';
     }
 }
 
@@ -114,10 +121,10 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
    
     
 
-
     
     
 });
+//  save button click
 
 document.getElementById('save-button').addEventListener('click', function(){
     
@@ -157,5 +164,6 @@ document.getElementById('save-button').addEventListener('click', function(){
     else{
        alert("please enter a number");
     }
+    
     
 });
