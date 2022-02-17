@@ -12,18 +12,8 @@ function expense(food, rent, clothes){
 }
 // get balance
 function balance(myIncome, myExpense){
-    // const balanceError = document.getElementById('balance-fail');
     const myBalanceAmount = myIncome - myExpense;
     return myBalanceAmount;
-    
-    /* if(myExpense > myIncome){
-        balanceError.style.display = 'block';
-        return myBalanceAmount;
-    }
-    else{
-       balanceError.style.display = 'none';
-       return myBalanceAmount;
-    } */
 }
 
 // error message
@@ -75,8 +65,7 @@ function errorMessage4(messageId, errorCondition){
 
 // calculate button click
 const calculateBtn = document.getElementById('calculate-btn').addEventListener('click',function(){
-    // const incomeInput = document.getElementById('income-input');
-    // const income = incomeInput.value;
+   
     const income =  getInputValue('income-input');
     const foodExpense = getInputValue('food-expense');
     const rentExpense =  getInputValue('rent-expense');
@@ -87,23 +76,15 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     const rentExpenseValue = parseInt(getInputValue('rent-expense'));
     const clothesExpenseValue = parseInt(getInputValue('clothes-expense'));
     
-    if(isNaN(income) == true){
-        console.log('string');
-    }
     if(isNaN(income) == false && isNaN(foodExpense) == false && isNaN(rentExpense) == false && isNaN(clothesExpense) == false){
-        console.log('number');
         if(incomeValue > 0 && foodExpenseValue > 0 && rentExpenseValue > 0 && clothesExpenseValue > 0){
-            console.log('numberrrr');
-            
+           
             const myExpense = expense(foodExpenseValue, rentExpenseValue, clothesExpenseValue);
             document.getElementById('total-expense').innerText = myExpense;
         
             const myBalance = balance(incomeValue, myExpense);  
             document.getElementById('remaining-balance').innerText = myBalance;
            
-            // const myBalance =income - myExpense;  
-            // document.getElementById('remaining-balance').innerText = myBalance;
-            // errorMessage2(income, myExpense);
             
             errorMessage('input-fail',false);
             errorMessage2('balance-fail', myExpense, incomeValue);
@@ -155,6 +136,7 @@ document.getElementById('save-button').addEventListener('click', function(){
             document.getElementById('new-remaining-balance').innerText = remainingBalance;
     
             errorMessage('input-fail',false);
+            errorMessage3('saving-fail', savingAmount, myBalance)
         }
         else{
             errorMessage('input-fail',true);
@@ -165,29 +147,6 @@ document.getElementById('save-button').addEventListener('click', function(){
     }
     
 });
-/*  const income =  parseInt(getInputValue('income-input'));
-    const foodExpense = parseInt(getInputValue('food-expense'));
-    const rentExpense = parseInt(getInputValue('rent-expense'));
-    const clothesExpense = parseInt(getInputValue('clothes-expense'));
-    const saveInput = parseInt(getInputValue('save-percentage'));
-
-    if(income > 0 && foodExpense > 0 && rentExpense > 0 && clothesExpense > 0 && saveInput>0){
-        const savingAmount = savePercentage(income,saveInput);
-        document.getElementById('saving-amount').innerText = savingAmount;
-    
-        const myExpense = expense(foodExpense, rentExpense, clothesExpense);
-        const myBalance = balance(income, myExpense);
-        const remainingBalance = newRemainingBalance(myBalance, savingAmount);
-       
-        document.getElementById('new-remaining-balance').innerText = remainingBalance;
-
-        errorMessage('input-fail',false);
-        errorMessage3('saving-fail', savingAmount, remainingBalance);
-    }
-    else{
-        errorMessage('input-fail',true);
-    } */
-
 
 
 function newRemainingBalance(myBalance, savingAmount){
