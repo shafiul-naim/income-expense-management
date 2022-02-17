@@ -79,7 +79,7 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     // const income = incomeInput.value;
     const income =  getInputValue('income-input');
     const foodExpense = getInputValue('food-expense');
-    const rentExpense =  parseInt(getInputValue('rent-expense'));
+    const rentExpense =  getInputValue('rent-expense');
     const clothesExpense = getInputValue('clothes-expense');
 
     const incomeValue = parseInt(getInputValue('income-input'));
@@ -93,7 +93,7 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
     if(isNaN(income) == false && isNaN(foodExpense) == false && isNaN(rentExpense) == false && isNaN(clothesExpense) == false){
         console.log('number');
         if(incomeValue > 0 && foodExpenseValue > 0 && rentExpenseValue > 0 && clothesExpenseValue > 0){
-            console.log('number');
+            console.log('numberrrr');
             
             const myExpense = expense(foodExpenseValue, rentExpenseValue, clothesExpenseValue);
             document.getElementById('total-expense').innerText = myExpense;
@@ -126,7 +126,46 @@ const calculateBtn = document.getElementById('calculate-btn').addEventListener('
 });
 
 document.getElementById('save-button').addEventListener('click', function(){
-    const income =  parseInt(getInputValue('income-input'));
+    console.log('hello')
+    const income =  getInputValue('income-input');
+    const foodExpense = getInputValue('food-expense');
+    const rentExpense =  getInputValue('rent-expense');
+    const clothesExpense = getInputValue('clothes-expense');
+    const saveInput = getInputValue('save-percentage');
+
+    const incomeValue = parseInt(getInputValue('income-input'));
+    const foodExpenseValue = parseInt(getInputValue('food-expense'));
+    const rentExpenseValue = parseInt(getInputValue('rent-expense'));
+    const clothesExpenseValue = parseInt(getInputValue('clothes-expense'));
+    const saveInputValue = parseInt(getInputValue('save-percentage'));
+    console.log('world')
+    
+    if(isNaN(income) == false && isNaN(foodExpense) == false && isNaN(rentExpense) == false && isNaN(clothesExpense) == false && isNaN(saveInput) == 0){
+        console.log('number1');
+        if(incomeValue > 0 && foodExpenseValue > 0 && rentExpenseValue > 0 && clothesExpenseValue > 0 && saveInputValue > 0){
+            console.log('number2');
+    
+            const savingAmount = savePercentage(incomeValue,saveInputValue);
+            document.getElementById('saving-amount').innerText = savingAmount;
+    
+            const myExpense = expense(foodExpenseValue, rentExpenseValue, clothesExpenseValue);
+            const myBalance = balance(incomeValue, myExpense);
+            const remainingBalance = newRemainingBalance(myBalance, savingAmount);
+    
+            document.getElementById('new-remaining-balance').innerText = remainingBalance;
+    
+            errorMessage('input-fail',false);
+        }
+        else{
+            errorMessage('input-fail',true);
+        }
+    }
+    else{
+        errorMessage4('string-fail',true);
+    }
+    
+});
+/*  const income =  parseInt(getInputValue('income-input'));
     const foodExpense = parseInt(getInputValue('food-expense'));
     const rentExpense = parseInt(getInputValue('rent-expense'));
     const clothesExpense = parseInt(getInputValue('clothes-expense'));
@@ -147,9 +186,9 @@ document.getElementById('save-button').addEventListener('click', function(){
     }
     else{
         errorMessage('input-fail',true);
-    }
-     
-})
+    } */
+
+
 
 function newRemainingBalance(myBalance, savingAmount){
     const remainingBalance = myBalance - savingAmount;
